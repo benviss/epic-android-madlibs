@@ -11,46 +11,79 @@
     tools:context="com.vizo.madlibs.MainActivity"
     android:background="@color/colorPrimaryLight">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/userFieldEditText"
-        android:background="@color/colorIcons"
-        android:padding="5dp"
-        android:hint="Empty Space"
-        android:layout_marginBottom="195dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="CrazyLibs!"
-        android:id="@+id/textView2"
-        android:textColor="@color/colorPrimaryText"
+        android:text="Choose Your Stories Theme"
+        android:id="@+id/textView"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginTop="31dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textAlignment="center" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RadioGroup
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="CrazyLibs!"
-        android:id="@+id/textView3"
-        android:textColor="@color/colorPrimaryText"
-        android:layout_marginBottom="133dp"
-        android:layout_above="@+id/userFieldEditText"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/radioButtonGroup"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="100dp">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Space Adventure"
+            android:id="@+id/radioButtonSpace"
+            android:checked="false"
+            android:layout_marginTop="25dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:onClick="onRadioButtonChange"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Horror"
+            android:id="@+id/radioButtonHorror"
+            android:checked="false"
+            android:layout_marginTop="24dp"
+            android:layout_below="@+id/radioButtonSpace"
+            android:layout_alignLeft="@+id/radioButtonSpace"
+            android:layout_alignStart="@+id/radioButtonSpace"
+            android:singleLine="true"
+            android:layout_gravity="center_horizontal"
+            android:onClick="onRadioButtonChange"/>
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medieval Adventure"
+            android:id="@+id/radioButtonAdventure"
+            android:checked="false"
+            android:layout_below="@+id/radioButtonHorror"
+            android:layout_alignLeft="@+id/radioButtonHorror"
+            android:layout_alignStart="@+id/radioButtonHorror"
+            android:layout_marginTop="31dp"
+            android:layout_gravity="center_horizontal"
+            android:onClick="onRadioButtonChange"/>
+
+    </RadioGroup>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"
+        android:text="Start Libbing"
+        android:id="@+id/button"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="82dp"
         android:background="@color/colorAccent"
-        android:id="@+id/submitWordButton"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="89dp" />
+        android:onClick="onSubmitStoryChoice"
+        android:layout_below="@+id/radioButtonGroup"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
